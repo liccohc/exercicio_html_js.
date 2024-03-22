@@ -2,40 +2,21 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML com JS</title>
+    <title>Documento de validação</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <form id="form-deposito">
-        <input type="number" id="numero-conta" required placeholder="numero da conta" />
-        <input type="number" id="valor-deposito" required placeholder="valor" />
-        <button id="btn-depositar" type="submit"> Depositar</button>
-    </form>
-    <scrip src="./main.js"></scrip>
+    <div class="container">
+        <form id="form-numerico">
+            <h2>Digite dois números sendo o campo B maior que o campo A</h2>
+            <input id="campo-a" type="number"required placeholder="campo A">
+            <input id="campo-b" type="number" required placeholder="campo B">
+            <button type="submit">validar</button>
+        </form> 
+        <p class="mensagen-falso"></p>
+        <p class="mensagen-verdade"></p>  
+    </div>
+    <script src="./main.js"></script>
 </body>
 </html>
--------------------------------------------------------------------------------------------------------------------------------
-main.js
-
-const form = document.getElementById('form-deposito');
-
-function validanumero(numeroCompleto) {
-    const numeroComoarray = numeroCompleto.split(' ');
-    return numeroComoarray.length >=2;
-}
-
-form.addEventListener('submit',function (e){
-    let formEValido = false
-    e.preventDefault();
-
-    const numeroConta = document.getElementById('numero-conta')
-    formEValido = validanumero(numeroCompleto.value)
-    if (formEValido) {
-        alert("Tudo certo");
-    } else {
-        alert("O numero não está completo ");
-    }
-})
-
-console.log(form);
